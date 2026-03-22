@@ -3,79 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal CV</title>
+    <title>Sudipto | Terminal CV</title>
     <style>
-        body {
-            background-color: #000;
-            color: #4af626; /* Classic Terminal Green */
-            font-family: 'Courier New', Courier, monospace;
-            padding: 20px;
-            line-height: 1.4;
+        :root {
+            --glow-color: #4af626;
         }
 
-        #terminal {
-            max-width: 900px;
-            margin: 0 auto;
+        body {
+            background-color: #010a01;
+            color: var(--glow-color);
+            font-family: 'Courier New', Courier, monospace;
+            padding: 40px;
+            margin: 0;
+            overflow-x: hidden;
+            text-shadow: 0 0 5px var(--glow-color), 0 0 10px rgba(74, 246, 38, 0.5);
+            animation: flicker 0.15s infinite;
+        }
+
+        /* The Retro Scanline Grid */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+            z-index: 10;
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
         }
 
         .header {
-            white-space: pre; /* Important for ASCII Art */
+            white-space: pre;
+            font-size: 14px;
+            line-height: 1.2;
+            margin-bottom: 30px;
             font-weight: bold;
+        }
+
+        .subheader {
+            font-size: 20px;
             margin-bottom: 20px;
+            border-bottom: 1px solid var(--glow-color);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .input-line {
-            display: flex;
-            align-items: center;
-        }
-
+        #history { margin-bottom: 10px; }
+        .input-line { display: flex; align-items: center; }
+        
         #command-input {
             background: transparent;
             border: none;
-            color: #4af626;
+            color: var(--glow-color);
             font-family: inherit;
             font-size: inherit;
             outline: none;
             flex-grow: 1;
             margin-left: 10px;
+            text-shadow: 0 0 5px var(--glow-color);
         }
 
-        .output {
-            margin-bottom: 10px;
-            white-space: pre-wrap;
-        }
+        .output { margin: 10px 0; white-space: pre-wrap; opacity: 0.9; }
 
-        /* Scanline Effect */
-        body::after {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
+        @keyframes flicker {
+            0% { opacity: 0.983; }
+            5% { opacity: 0.995; }
+            10% { opacity: 0.942; }
+            15% { opacity: 0.991; }
+            20% { opacity: 0.988; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <div id="terminal">
         <div class="header">
-███████╗██╗   ██╗██████╗ ██╗██████╗ ████████╗ ██████╗ 
+ ███████╗██╗   ██╗██████╗ ██╗██████╗ ████████╗ ██████╗ 
  ██╔════╝██║   ██║██╔══██╗██║██╔══██╗╚══██╔══╝██╔═══██╗
  ███████╗██║   ██║██║  ██║██║██████╔╝   ██║   ██║   ██║
  ╚════██║██║   ██║██║  ██║██║██╔═══╝    ██║   ██║   ██║
  ███████║╚██████╔╝██████╔╝██║██║        ██║   ╚██████╔╝
- ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝    ╚═════╝
+ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝    ╚═════╝ 
         </div>
-        <div class="output">Type 'help' to see available commands.</div>
+        <div class="subheader">DevOps | Software Engineering | Automation</div>
+        <div class="output">Hello There...<br>Type 'help' to see available commands.</div>
         <div id="history"></div>
         <div class="input-line">
-            <span>root@portfolio:~$</span>
+            <span>root ></span>
             <input type="text" id="command-input" autofocus autocomplete="off">
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
