@@ -2,11 +2,12 @@ const input = document.getElementById('command-input');
 const history = document.getElementById('history');
 
 const commands = {
-    help: "Available commands: [about, projects, experience, contact, clear]",
-    about: "I am Sudipto, a Computer Science student interested in Linux and Robotics.",
-    projects: "1. 2D Endless Runner (Godot)\n2. BMO Robot (Raspberry Pi)\n3. Custom Linux Configs",
-    experience: "Student at Daffodil International University | Open Source Contributor",
-    contact: "Find me on GitHub: @yourusername",
+    help: "AVAILABLE COMMANDS:\n- about\n- projects\n- experience\n- education\n- contact\n- clear",
+    about: "I am Sudipto, a CS student at DIU focused on Linux, Robotics, and Godot.",
+    projects: "Current focus: BMO Robot (Pi) & 2D Endless Runner (Godot).",
+    experience: "Building custom Linux environments and researching CS topics.",
+    education: "Daffodil International University (DIU)",
+    contact: "GitHub: @acidki",
 };
 
 input.addEventListener('keydown', (e) => {
@@ -18,8 +19,10 @@ input.addEventListener('keydown', (e) => {
 });
 
 function processCommand(cmd) {
+    if (cmd === '') return;
+
     const line = document.createElement('div');
-    line.innerHTML = `<span>root@portfolio:~$ ${cmd}</span>`;
+    line.innerHTML = `<span>root > ${cmd}</span>`;
     history.appendChild(line);
 
     const result = document.createElement('div');
