@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal CV</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #4af626; /* Classic Terminal Green */
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        #terminal {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            white-space: pre; /* Important for ASCII Art */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .input-line {
+            display: flex;
+            align-items: center;
+        }
+
+        #command-input {
+            background: transparent;
+            border: none;
+            color: #4af626;
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        .output {
+            margin-bottom: 10px;
+            white-space: pre-wrap;
+        }
+
+        /* Scanline Effect */
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div class="header">
+ _____ _   _ ____ ___ ____ _____ ___  
+/  ___| | | |  _ \_ _|  _ \_   _/ _ \ 
+\___ \| | | | | | | || |_) || || | | |
+ ___) | |_| | |_| | ||  __/ | || |_| |
+|____/ \___/|____/___|_|    |_| \___/ 
+        </div>
+        <div class="output">Type 'help' to see available commands.</div>
+        <div id="history"></div>
+        <div class="input-line">
+            <span>root@portfolio:~$</span>
+            <input type="text" id="command-input" autofocus autocomplete="off">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
