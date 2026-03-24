@@ -4,13 +4,12 @@ const app = express();
 
 const PORT = process.env.PORT || 10000;
 
-// Middleware to check for terminal access
+// 1. Detect Terminal Users (curl/wget)
 app.get('/', (req, res, next) => {
     const userAgent = req.headers['user-agent'] || '';
     
     if (userAgent.toLowerCase().includes('curl') || userAgent.toLowerCase().includes('wget')) {
         res.setHeader('Content-Type', 'text/plain');
-        // Neofetch style for terminal users
         return res.send(`
 \x1b[31macid\x1b[0m@\x1b[31mGenesis\x1b[0m
 -----------------------
@@ -26,9 +25,10 @@ app.get('/', (req, res, next) => {
     next();
 });
 
-// Serve the CRT website for browsers
+// 2. Serve static files (boot.mp3, script.js, etc.)
 app.use(express.static(path.join(__dirname)));
 
+// 3. Serve the CRT Browser Website
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
