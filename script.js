@@ -4,8 +4,8 @@ const welcomeMsg = document.getElementById('welcome-msg');
 
 const commands = {
     help: "Available: about, projects, contact, clear",
-    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast.",
-    projects: " Endless Runner Game, BMO Robot, Linux Customizations.",
+    about: "Sudipto (Acid) | CS Student at DIU | Tech Enthusiast.",
+    projects: " Endless Runner Game, BMO Robot, NIMO Deskbot.",
     contact: "GitHub: acidki | Email: sudiptochakrabortysuvo@gmail.com",
 };
 
