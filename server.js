@@ -4,37 +4,37 @@ const app = express();
 
 const PORT = process.env.PORT || 10000;
 
-// This line tells Express to serve files like script.js and index.html automatically
+// Serve static files (like script.js)
 app.use(express.static(path.join(__dirname)));
 
 app.get('/', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
 
-    // If it's a terminal using curl
-    if (userAgent.includes('curl')) {
-        const banner = `
-\x1b[32m ███████╗██╗   ██╗██████╗ ██╗██████╗ ████████╗ ██████╗ 
+    // 1. IF IT'S A TERMINAL (curl, wget, etc.)
+    if (userAgent.toLowerCase().includes('curl') || userAgent.toLowerCase().includes('wget')) {
+        const terminalBanner = `
+\x1b[32m
+ ███████╗██╗   ██╗██████╗ ██╗██████╗ ████████╗ ██████╗ 
  ██╔════╝██║   ██║██╔══██╗██║██╔══██╗╚══██╔══╝██╔═══██╗
  ███████╗██║   ██║██║  ██║██║██████╔╝   ██║   ██║   ██║
  ╚════██║██║   ██║██║  ██║██║██╔═══╝    ██║   ██║   ██║
  ███████║╚██████╔╝██████╔╝██║██║        ██║   ╚██████╔╝
- ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝    ╚═════╝ \x1b[0m
- 
+ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝    ╚═════╝ 
+\x1b[0m
  DevOps | Software Engineering | Automation
- 
- Type: \x1b[36mcurl ${req.headers.host}/help\x1b[0m to see more.
+
+ Hello Sudipto! Your terminal-accessible CV is live.
+ Type: \x1b[36mcurl ${req.headers.host}/help\x1b[0m for more.
         `;
-        return res.send(banner);
+        return res.send(terminalBanner);
     }
     
-    // FORCE the browser to treat this as HTML
-    res.setHeader('Content-Type', 'text/html');
+    // 2. IF IT'S A BROWSER (Chrome, Firefox, etc.)
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Adding a /help route for curl users
 app.get('/help', (req, res) => {
-    res.send("Available Commands: about, projects, contact\nExample: curl " + req.headers.host + "/projects");
+    res.send("Try these: /projects, /contact, /about");
 });
 
 app.listen(PORT, () => {
