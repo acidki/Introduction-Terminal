@@ -5,72 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUDIPTO | Terminal</title>
     <style>
-        :root {
-            --glow-color: #4af626;
-        }
-
+        :root { --glow-color: #4af626; }
         body {
             background-color: #010a01;
             color: var(--glow-color);
             font-family: 'Courier New', Courier, monospace;
-            padding: 40px;
-            margin: 0;
-            overflow-x: hidden;
+            padding: 40px; margin: 0; overflow-x: hidden;
             text-shadow: 0 0 5px var(--glow-color), 0 0 10px rgba(74, 246, 38, 0.5);
             animation: flicker 0.15s infinite;
         }
-
-        /* Scanline / CRT Grid Effect */
         body::before {
-            content: " ";
-            display: block;
-            position: fixed;
+            content: " "; display: block; position: fixed;
             top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), 
                         linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
-            z-index: 10;
-            background-size: 100% 3px, 3px 100%;
-            pointer-events: none;
+            z-index: 10; background-size: 100% 3px, 3px 100%; pointer-events: none;
         }
-
-        .header {
-            white-space: pre;
-            font-size: 14px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .subheader {
-            font-size: 18px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--glow-color);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .output { margin: 10px 0; white-space: pre-wrap; opacity: 0.9; }
+        .header { white-space: pre; font-size: 14px; line-height: 1.2; margin-bottom: 20px; font-weight: bold; }
+        .subheader { font-size: 18px; margin-bottom: 30px; border-bottom: 1px solid var(--glow-color); display: inline-block; padding-bottom: 5px; }
+        .output { margin: 10px 0; white-space: pre-wrap; opacity: 0.9; min-height: 1.2em; }
         #history { margin-bottom: 10px; }
         .input-line { display: flex; align-items: center; }
-        
         #command-input {
-            background: transparent;
-            border: none;
-            color: var(--glow-color);
-            font-family: inherit;
-            font-size: inherit;
-            outline: none;
-            flex-grow: 1;
-            margin-left: 10px;
-            text-shadow: 0 0 5px var(--glow-color);
+            background: transparent; border: none; color: var(--glow-color);
+            font-family: inherit; font-size: inherit; outline: none;
+            flex-grow: 1; margin-left: 10px; text-shadow: 0 0 5px var(--glow-color);
         }
-
-        @keyframes flicker {
-            0% { opacity: 0.98; }
-            5% { opacity: 0.95; }
-            10% { opacity: 0.99; }
-            100% { opacity: 1; }
-        }
+        @keyframes flicker { 0% { opacity: 0.98; } 5% { opacity: 0.95; } 10% { opacity: 0.99; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -84,7 +45,7 @@
  ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝    ╚═════╝ 
         </div>
         <div class="subheader">DevOps | Software Engineering | Automation</div>
-        <div class="output">Hello There...<br>Type 'help' to see available commands.</div>
+        <div id="welcome-msg" class="output"></div>
         <div id="history"></div>
         <div class="input-line">
             <span>root ></span>
