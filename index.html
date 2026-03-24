@@ -1,41 +1,102 @@
-<div id="terminal">
-    <div class="fetch-container">
-        <div class="ascii-art">
-         .::::::::::.
-      .::::::::::::::::.
-     .::':::::::::::::::
-     ::  '::::::::::::::
-     ::   ':::::::::::::
-     ::    '::::::::::::
-     ::     ::::::::::::
-     ::     ::::::::::::
-     ::    .::::::::::::
-     ::   .:::::::::::::
-     ::  .::::::::::::::
-     '::::::::::::::::'
-       '::::::::::::::
-        '::::::::::'
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acid@Genesis: ~</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #4af626;
+            font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+            padding: 40px;
+            margin: 0;
+            line-height: 1.2;
+        }
 
-        <div class="info-side">
-            <div class="user-line"><span class="user">acid</span>@<span class="host">Genesis</span></div>
-            <div class="separator">-----------------------</div>
-            <div class="info-item"><span class="label">👤 User</span> > <span class="value">Sudipto Chakraborty</span></div>
-            <div class="info-item"><span class="label">💻 OS</span> > <span class="value">Ubuntu / Arch Enthusiast</span></div>
-            <div class="info-item"><span class="label">⚙️ Role</span> > <span class="value">DevOps & Game Developer</span></div>
-            <div class="info-item"><span class="label">🖥️ Github</span> > <span class="value">github.com/acidki</span></div>
-            <div class="info-item"><span class="label">📧 Email</span> > <span class="value">sudipto@yourmail.com</span></div>
-            <div class="info-item"><span class="label">📡 Status</span> > <span class="value">Online (Daffodil Intl Univ)</span></div>
-            
-            <div class="color-blocks">
-                <span class="block black"></span><span class="block red"></span><span class="block green"></span><span class="block yellow"></span><span class="block blue"></span><span class="block magenta"></span><span class="block cyan"></span><span class="block white"></span>
+        .fetch-container {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .ascii-art {
+            white-space: pre;
+            color: #4af626;
+            font-size: 12px;
+            filter: drop-shadow(0 0 5px #4af626);
+        }
+
+        .info-side {
+            padding-top: 10px;
+        }
+
+        .user-line { font-weight: bold; margin-bottom: 8px; font-size: 18px; }
+        .user { color: #ff3e3e; } 
+        .host { color: #ff3e3e; }
+        .separator { color: #4af626; margin-bottom: 10px; }
+
+        .info-item { margin-bottom: 5px; font-size: 16px; }
+        .label { color: #ff3e3e; font-weight: bold; display: inline-block; width: 80px; }
+        .value { color: #4af626; }
+
+        .color-blocks {
+            margin-top: 20px;
+            display: flex;
+        }
+        .block { width: 35px; height: 18px; display: inline-block; }
+        .bg-black { background: #2e3436; }
+        .bg-red { background: #cc0000; }
+        .bg-green { background: #4e9a06; }
+        .bg-yellow { background: #c4a000; }
+        .bg-blue { background: #3465a4; }
+        .bg-magenta { background: #75507b; }
+        .bg-cyan { background: #06989a; }
+        .bg-white { background: #d3d7cf; }
+
+        .input-line { display: flex; align-items: center; margin-top: 20px; font-size: 16px; }
+        #command-input {
+            background: transparent;
+            border: none;
+            color: #4af626;
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div class="fetch-container">
+            <div class="ascii-art">
+             .::::::::::.
+          .::::::::::::::::.
+         .::':::::::::::::::
+         ::  '::::::::::::::
+         ::   ':::::::::::::
+         ::    '::::::::::::
+         ::     ::::::::::::
+         ::     ::::::::::::
+         ::    .::::::::::::
+         ::   .:::::::::::::
+         ::  .::::::::::::::
+         '::::::::::::::::'
+           '::::::::::::::
+            '::::::::::'
             </div>
-        </div>
-    </div>
 
-    <div id="history"></div>
-    <div class="input-line">
-        <span>acid@Genesis:~$</span>
-        <input type="text" id="command-input" autofocus autocomplete="off">
-    </div>
-</div>
+            <div class="info-side">
+                <div class="user-line"><span class="user">acid</span>@<span class="host">Genesis</span></div>
+                <div class="separator">-----------------------</div>
+                <div class="info-item"><span class="label">User</span> > <span class="value">Sudipto Chakraborty</span></div>
+                <div class="info-item"><span class="label">OS</span> > <span class="value">Ubuntu 24.04 LTS (Genesis)</span></div>
+                <div class="info-item"><span class="label">Kernel</span> > <span class="value">Linux 6.17.0-generic</span></div>
+                <div class="info-item"><span class="label">Shell</span> > <span class="value">zsh / bash</span></div>
+                <div class="info-item"><span class="label">Github</span> > <span class="value">github.com/acidki</span></div>
+                <div class="info-item"><span class="label">Status</span> > <span class="value">Daffodil Intl University</span></div>
+                
+                <div class="color-blocks">
+                    <span class="block bg-black"></span><span class="block bg-red"></span><span class="block bg-green"></span><span class="block bg-yellow"></span><span class="block bg-blue"></span><span class="block bg-magenta"></span><span class="block bg-cyan"></span><span
