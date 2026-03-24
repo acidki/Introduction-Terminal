@@ -5,8 +5,8 @@ const welcomeMsg = document.getElementById('welcome-msg');
 const commands = {
     help: "Available: about, projects, contact, clear",
     about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast.",
-    projects: "Godot Endless Runner, BMO Robot, Linux Customizations.",
-    contact: "GitHub: @acidki | Email: yourname@example.com",
+    projects: " Endless Runner Game, BMO Robot, Linux Customizations.",
+    contact: "GitHub: acidki | Email: sudiptochakrabortysuvo@gmail.com",
 };
 
 // --- Typewriter Function ---
