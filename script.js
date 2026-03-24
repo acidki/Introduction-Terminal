@@ -2,38 +2,34 @@ const input = document.getElementById('command-input');
 const history = document.getElementById('history');
 
 const commands = {
-    help: "AVAILABLE COMMANDS:\n- about\n- projects\n- experience\n- education\n- contact\n- clear",
-    about: "I am Sudipto, a CS student at DIU focused on Linux, Robotics, and Godot.",
-    projects: "Current focus: BMO Robot (Pi) & 2D Endless Runner (Godot).",
-    experience: "Building custom Linux environments and researching CS topics.",
-    education: "Daffodil International University (DIU)",
-    contact: "GitHub: @acidki",
+    help: "Available: about, projects, contact, clear",
+    about: "Sudipto (Acid) | CS Student | Robotics & Game Dev enthusiast.",
+    projects: "Godot Endless Runner, BMO Robot (Arduino/Pi), Terminal CV.",
+    contact: "Email: sudipto@example.com | GitHub: @acidki",
 };
 
 input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const cmd = input.value.toLowerCase().trim();
-        processCommand(cmd);
+        const line = document.createElement('div');
+        line.className = 'input-line';
+        line.innerHTML = `<span>acid@Genesis:~$ ${cmd}</span>`;
+        history.appendChild(line);
+
+        if (cmd === 'clear') {
+            history.innerHTML = '';
+        } else if (commands[cmd]) {
+            const output = document.createElement('div');
+            output.style.margin = "5px 0 15px 0";
+            output.innerText = commands[cmd];
+            history.appendChild(output);
+        } else if (cmd !== "") {
+            const error = document.createElement('div');
+            error.innerText = `Command not found: ${cmd}`;
+            history.appendChild(error);
+        }
+
         input.value = '';
+        window.scrollTo(0, document.body.scrollHeight);
     }
 });
-
-function processCommand(cmd) {
-    if (cmd === '') return;
-
-    const line = document.createElement('div');
-    line.innerHTML = `<span>root > ${cmd}</span>`;
-    history.appendChild(line);
-
-    const result = document.createElement('div');
-    result.className = 'output';
-
-    if (cmd === 'clear') {
-        history.innerHTML = '';
-        return;
-    }
-
-    result.innerText = commands[cmd] || `Command not found: ${cmd}. Type 'help' for options.`;
-    history.appendChild(result);
-    window.scrollTo(0, document.body.scrollHeight);
-}
