@@ -7,6 +7,9 @@ const commands = {
     about: "Sudipto (Acid) | CSE Student at DIU | Tech Enthusiast. Currently building an interactive desk bot.",
     skills: "Programming: C, JavaScript, Godot Script,Python. Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi.",
     projects: "1. Godot 2D Endless Runner\n2. BMO Robot (Hardware)\n3. Terminal CV (Node.js)",
+    achievements: `[🏆 HALL OF FAME ]
+1. 8th Place - DIU Prompt Battle (Daffodil International University)\n
+2. Participant - NASA Space Apps Challenge 2024`,
     contact: "GitHub: github.com/acidki | Email: sudiptochakrabortysuvo@gmail.com",
     experience: "Section 70_G Football Team Organizer | Iftar Party Event Management.",
     education: "UNIVERSITY: Daffodil International University | Degree: Bachelor of Science | Subject: Computer Science & Engineering\n\nCOLLEGE: Govt. Rupnagar Model School & College | Degree: HSC | Subject: Science",
