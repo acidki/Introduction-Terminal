@@ -11,17 +11,19 @@ app.get('/', (req, res, next) => {
         res.setHeader('Content-Type', 'text/plain; charset=utf-8');
         
         return res.send(`
-\x1b[32m ⣿⣿⣿⡅⡹⢿⠆⠙⠋⠉⠻⠿⣿⣿⣿       \x1b[31macid\x1b[0m@\x1b[31mGenesis\x1b[0m
-\x1b[32m ⣿⣶⠐⠁⠀⣀⣠⣤⠄⠀⠀⠈⠙⠻⣿⣿      -----------------------
-\x1b[32m ⡛⡩⠖⠀⣴⣿⣿⣿⠀⠀⠀⠀⠸⠇⠀⠙⢿     \x1b[31mUser\x1b[0m   > Sudipto Chakraborty Suvo
-\x1b[32m ⢻⣦⢀⣹⣿⣿⣿⣇⠀⠄⠀⠀⠀⡀⠀⠈⢻     \x1b[31mOS\x1b[0m     > Ubuntu 24.04 LTS
-\x1b[32m ⣼⣄⢫⡌⣿⣿⣿⣿⣿⣦⡈⠲⣄⣤⣤⡡⢀⣠    \x1b[31mUni\x1b[0m   > Daffodil Intl University 
-\x1b[32m ⣿⣦⠱⢻⣿⣿⣿⣿⣿⣿⣷⣬⣍⣭⣥⣾⣿⣿    \x1b[31mStatus\x1b[0m > Persuing Bachalors in Computer Science
-\x1b[32m ⠻⣿⣷⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿    \x1b[31mHobby\x1b[0m  > Anime, Music, Movies
-\x1b[32m ⠃⣧⡹⣿⣷⡄⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     
-\x1b[32m ⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[33m[!] WEB VERSION:\x1b[0m
-\x1b[32m ⠛⢷⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿     \x1b[32mhttps://${req.headers.host}\x1b[0m
-\x1b[32m ⢷⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[34m[████████░░░] 70% Progress\x1b[0m
+\x1b[32m⣿⣿⣿⡅⡹⢿⠆⠙⠋⠉⠻⠿⣿⣿⣿       \x1b[31macid\x1b[0m@\x1b[31mGenesis\x1b[0m
+\x1b[32m⣿⣶⠐⠁⠀⣀⣠⣤⠄⠀⠀⠈⠙⠻⣿⣿      -----------------------
+\x1b[32m⡛⡩⠖⠀⣴⣿⣿⣿⠀⠀⠀⠀⠸⠇⠀⠙⢿     \x1b[31mUser\x1b[0m   > Sudipto Chakraborty Suvo
+\x1b[32m⢻⣦⢀⣹⣿⣿⣿⣇⠀⠄⠀⠀⠀⡀⠀⠈⢻     \x1b[31mOS\x1b[0m     > Ubuntu 24.04 LTS
+\x1b[32m⣼⣄⢫⡌⣿⣿⣿⣿⣿⣦⡈⠲⣄⣤⣤⡡⢀⣠     \x1b[31mUni\x1b[0m    > Daffodil Intl University
+\x1b[32m⣿⣦⠱⢻⣿⣿⣿⣿⣿⣿⣷⣬⣍⣭⣥⣾⣿⣿     \x1b[31mStatus\x1b[0m > Pursuing BSc in CSE
+\x1b[32m⠻⣿⣷⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[31mHobby\x1b[0m  > Anime, Music, Movies
+\x1b[32m⠃⣧⡹⣿⣷⡄⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[31mACHV\x1b[0m   > 8th @ DIU Prompt Battle
+\x1b[32m⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[31mACHV\x1b[0m   > NASA Space Apps Participant
+\x1b[32m⠛⢷⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿     |
+\x1b[32m⢷⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[33m[!] WEB VERSION:\x1b[0m
+\x1b[32m⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[32mhttps://${req.headers.host}\x1b[0m
+\x1b[32m⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[34m[████████░░░] 70% Progress\x1b[0m
 \x1b[0m`);
     }
     next();
