@@ -4,14 +4,13 @@ const welcomeMsg = document.getElementById('welcome-msg');
 
 const commands = {
     help: "Available: about, projects, education, hobbies, contact, clear",
-    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast. Currently building an interactive BMO robot.",
-    projects: "Godot 2D Endless Runner, BMO Robot (Arduino/Pi), Terminal-CV Portfolio.",
+    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast. Building a BMO robot.",
+    projects: "Godot 2D Endless Runner, BMO Robot (Arduino/Pi), Terminal CV.",
     education: "B.Sc. in CSE @ Daffodil International University | HSC @ Govt Rupnagar Model School & College.",
     hobbies: "Watching Anime, Listening to Music, Watching Movies.",
     contact: "GitHub: @acidki | Email: sudipto@example.com",
 };
 
-// --- Typewriter Function ---
 function typewriter(element, text, speed = 40) {
     let i = 0;
     function type() {
@@ -24,26 +23,17 @@ function typewriter(element, text, speed = 40) {
     type();
 }
 
-// --- Audio & Init Logic ---
 let initialized = false;
 const initSite = () => {
     if (initialized) return;
     initialized = true;
-
-    // Play Boot Sound (Ensure boot.mp3 is on GitHub)
-    const audio = new Audio('boot.mp3');
-    audio.volume = 0.4;
-    audio.play().catch(() => console.log("Audio blocked. Click to boot."));
-
-    // Start Typewriter
-    typewriter(welcomeMsg, "System initialized... Type 'help' to see available commands.");
+    new Audio('boot.mp3').play().catch(() => {});
+    typewriter(welcomeMsg, "System initialized... Type 'help' to begin.");
 };
 
-// Trigger on first interaction
 document.addEventListener('click', initSite, { once: true });
 document.addEventListener('keydown', initSite, { once: true });
 
-// --- Command Logic ---
 input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const cmd = input.value.toLowerCase().trim();
@@ -63,7 +53,6 @@ input.addEventListener('keydown', (e) => {
             err.innerText = `Command not found: ${cmd}`;
             history.appendChild(err);
         }
-        
         input.value = '';
         window.scrollTo(0, document.body.scrollHeight);
     }
