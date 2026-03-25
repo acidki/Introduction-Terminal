@@ -1,5 +1,5 @@
 # 📟 Genesis Terminal CV
-> **Sudipto Chakraborty Suvo (Acid)** | DevOps | Software Engineering | Automation
+> **Sudipto Chakraborty Suvo (Acid)** | Just a Curious guy
 
 A retro-inspired, CRT-style portfolio designed for the modern web but built for the Linux terminal. This project features environment-aware rendering to serve a custom experience based on how you access it.
 
