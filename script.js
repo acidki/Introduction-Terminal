@@ -4,13 +4,13 @@ const welcomeMsg = document.getElementById('welcome-msg');
 
 const commands = {
     help: "Available: about, skills, projects, contact, experience, education, languages, clear, reload",
-    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast. Currently building an interactive BMO robot.",
-    skills: "Programming: C, JavaScript, Godot Script. Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi.",
+    about: "Sudipto (Acid) | CSE Student at DIU | Tech Enthusiast. Currently building an interactive desk bot.",
+    skills: "Programming: C, JavaScript, Godot Script,Python. Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi.",
     projects: "1. Godot 2D Endless Runner\n2. BMO Robot (Hardware)\n3. Terminal CV (Node.js)",
-    contact: "GitHub: github.com/acidki | Email: sudipto@example.com",
+    contact: "GitHub: github.com/acidki | Email: sudiptochakrabortysuvo@gmail.com",
     experience: "Section 70_G Football Team Organizer | Iftar Party Event Management.",
     education: "UNIVERSITY: Daffodil International University | Degree: Bachelor of Science | Subject: Computer Science & Engineering\n\nCOLLEGE: Govt. Rupnagar Model School & College | Degree: HSC | Subject: Science",
-    languages: "English (Professional), Bengali (Native).",
+    languages: "English (Professional)\nBengali (Native)\nHindi (can Speak)\nJapanese (learning)",
 };
 
 function typewriter(element, text, speed = 40) {
