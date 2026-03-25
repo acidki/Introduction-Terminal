@@ -14,6 +14,7 @@
             text-shadow: 0 0 5px var(--glow-color), 0 0 10px rgba(74, 246, 38, 0.5);
             animation: flicker 0.15s infinite;
         }
+        /* CRT Scanline Effect */
         body::before {
             content: " "; display: block; position: fixed;
             top: 0; left: 0; bottom: 0; right: 0;
@@ -23,7 +24,7 @@
         }
         .header { white-space: pre; font-size: 14px; line-height: 1.2; margin-bottom: 20px; font-weight: bold; }
         .subheader { font-size: 18px; margin-bottom: 30px; border-bottom: 1px solid var(--glow-color); display: inline-block; padding-bottom: 5px; }
-        .output { margin: 10px 0; white-space: pre-wrap; opacity: 0.9; min-height: 1.2em; }
+        .output { margin: 10px 0; white-space: pre-wrap; opacity: 0.9; min-height: 1.2em; line-height: 1.4; }
         #history { margin-bottom: 10px; }
         .input-line { display: flex; align-items: center; }
         #command-input {
@@ -44,7 +45,7 @@
  ███████║╚██████╔╝██████╔╝██║██║        ██║   ╚██████╔╝
  ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝        ╚═╝    ╚═════╝ 
         </div>
-        <div class="subheader">Curios | Computer Science Student | Loves doing projects</div>
+        <div class="subheader">DevOps | Software Engineering | Automation</div>
         <div id="welcome-msg" class="output"></div>
         <div id="history"></div>
         <div class="input-line">
