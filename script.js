@@ -3,10 +3,12 @@ const history = document.getElementById('history');
 const welcomeMsg = document.getElementById('welcome-msg');
 
 const commands = {
-    help: "Available: about, projects, contact, clear",
-    about: "Sudipto (Acid) | CS Student at DIU | Tech Enthusiast.",
-    projects: " Endless Runner Game, BMO Robot, NIMO Deskbot.",
-    contact: "GitHub: acidki | Email: sudiptochakrabortysuvo@gmail.com",
+    help: "Available: about, projects, education, hobbies, contact, clear",
+    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast. Currently building an interactive BMO robot.",
+    projects: "Godot 2D Endless Runner, BMO Robot (Arduino/Pi), Terminal-CV Portfolio.",
+    education: "B.Sc. in CSE @ Daffodil International University | HSC @ Govt Rupnagar Model School & College.",
+    hobbies: "Watching Anime, Listening to Music, Watching Movies.",
+    contact: "GitHub: @acidki | Email: sudipto@example.com",
 };
 
 // --- Typewriter Function ---
@@ -31,13 +33,13 @@ const initSite = () => {
     // Play Boot Sound (Ensure boot.mp3 is on GitHub)
     const audio = new Audio('boot.mp3');
     audio.volume = 0.4;
-    audio.play().catch(() => console.log("Audio blocked."));
+    audio.play().catch(() => console.log("Audio blocked. Click to boot."));
 
     // Start Typewriter
-    typewriter(welcomeMsg, "Hello There... Type 'help' to see available commands.");
+    typewriter(welcomeMsg, "System initialized... Type 'help' to see available commands.");
 };
 
-// Trigger on first click or keypress
+// Trigger on first interaction
 document.addEventListener('click', initSite, { once: true });
 document.addEventListener('keydown', initSite, { once: true });
 
