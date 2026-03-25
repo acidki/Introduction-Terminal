@@ -10,17 +10,24 @@ app.get('/', (req, res, next) => {
     
     if (userAgent.toLowerCase().includes('curl') || userAgent.toLowerCase().includes('wget')) {
         res.setHeader('Content-Type', 'text/plain');
+        // --- TERMINAL ONLY ASCII PROFILE ---
         return res.send(`
-\x1b[31macid\x1b[0m@\x1b[31mGenesis\x1b[0m
------------------------
-\x1b[31mUser\x1b[0m   > Sudipto Chakraborty
-\x1b[31mOS\x1b[0m     > Ubuntu 24.04 LTS (Genesis)
-\x1b[31mStatus\x1b[0m > Online (Daffodil Intl University)
-\x1b[31mGithub\x1b[0m > github.com/acidki
-
-\x1b[33m[!] FOR THE FULL RETRO EXPERIENCE, VISIT:\x1b[0m
-\x1b[32mhttps://${req.headers.host}\x1b[0m
-`);
+\x1b[32m       .::::::::::.        \x1b[31macid\x1b[0m@\x1b[31mGenesis\x1b[0m
+\x1b[32m    .::::::::::::::::.     \x1b[0m-----------------------
+\x1b[32m   .::':::::::::::::::     \x1b[31mUser\x1b[0m   > Sudipto Chakraborty
+\x1b[32m   ::  '::::::::::::::     \x1b[31mOS\x1b[0m     > Ubuntu 24.04 (Genesis)
+\x1b[32m   ::   ':::::::::::::     \x1b[31mUniv\x1b[0m   > Daffodil Intl Univ (CSE)
+\x1b[32m   ::    '::::::::::::     \x1b[31mStatus\x1b[0m > Building BMO Robot
+\x1b[32m   ::     ::::::::::::     
+\x1b[32m   ::     ::::::::::::     \x1b[33m[ INTERESTS ]\x1b[0m
+\x1b[32m   ::    .::::::::::::     \x1b[36m♫\x1b[0m Music  \x1b[36m📺\x1b[0m Anime  \x1b[36m🎬\x1b[0m Movies
+\x1b[32m   ::   .:::::::::::::     
+\x1b[32m   ::  .::::::::::::::     \x1b[33m[ VISIT WEB VERSION ]\x1b[0m
+\x1b[32m   ::  .::::::::::::::     \x1b[32mhttps://${req.headers.host}\x1b[0m
+\x1b[32m   '::::::::::::::::'      
+\x1b[32m     '::::::::::::::       \x1b[34m[████████░░░] 70% Progress\x1b[0m
+\x1b[32m      '::::::::::'         
+\x1b[0m`);
     }
     next();
 });
