@@ -1,40 +1,32 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+
 const PORT = process.env.PORT || 10000;
 
-// Data for both Browser and Terminal
-const data = {
-    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast. Building a BMO robot.",
-    skills: "Programming: C, JavaScript, Godot Script. Tools: Linux, Git, Arduino.",
-    projects: "1. Godot Runner 2. BMO Robot 3. Terminal CV",
-    education: "B.Sc in CSE @ Daffodil Intl University | HSC @ Govt. Rupnagar Model",
-    languages: "English (Professional), Bengali (Native)",
-    experience: "Football Team Organizer | Event Management."
-};
-
-// Handle CURL requests for specific commands (e.g., /about, /skills)
-app.get('/:cmd', (req, res, next) => {
-    const userAgent = req.headers['user-agent'] || '';
-    const cmd = req.params.cmd.toLowerCase();
-    
-    if (userAgent.toLowerCase().includes('curl') && data[cmd]) {
-        res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-        return res.send(`\n[ ${cmd.toUpperCase()} ]\n${data[cmd]}\n`);
-    }
-    next();
-});
-
-// Original logic for the main page
 app.get('/', (req, res, next) => {
     const userAgent = req.headers['user-agent'] || '';
-    if (userAgent.toLowerCase().includes('curl')) {
+    
+    if (userAgent.toLowerCase().includes('curl') || userAgent.toLowerCase().includes('wget')) {
         res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-        return res.send(`\nSudipto Chakraborty (Acid)\nAvailable: help, about, skills, projects, education, languages, experience\nTry: curl ${req.headers.host}/about\n`);
+        
+        return res.send(`
+\x1b[32m ⣿⣿⣿⡅⡹⢿⠆⠙⠋⠉⠻⠿⣿⣿⣿       \x1b[31macid\x1b[0m@\x1b[31mGenesis\x1b[0m
+\x1b[32m ⣿⣶⠐⠁⠀⣀⣠⣤⠄⠀⠀⠈⠙⠻⣿⣿      -----------------------
+\x1b[32m ⡛⡩⠖⠀⣴⣿⣿⣿⠀⠀⠀⠀⠸⠇⠀⠙⢿     \x1b[31mUser\x1b[0m   > Sudipto Chakraborty
+\x1b[32m ⢻⣦⢀⣹⣿⣿⣿⣇⠀⠄⠀⠀⠀⡀⠀⠈⢻     \x1b[31mOS\x1b[0m     > Ubuntu 24.04 (Genesis)
+\x1b[32m ⣼⣄⢫⡌⣿⣿⣿⣿⣿⣦⡈⠲⣄⣤⣤⡡⢀⣠     \x1b[31mUniv\x1b[0m   > Daffodil Intl Univ (CSE)
+\x1b[32m ⣿⣦⠱⢻⣿⣿⣿⣿⣿⣿⣷⣬⣍⣭⣥⣾⣿⣿     \x1b[31mStatus\x1b[0m > Building BMO Robot
+\x1b[32m ⠻⣿⣷⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[31mHobby\x1b[0m  > Anime, Music, Movies
+\x1b[32m ⠃⣧⡹⣿⣷⡄⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     
+\x1b[32m ⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[33m[!] WEB VERSION:\x1b[0m
+\x1b[32m ⠛⢷⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿     \x1b[32mhttps://${req.headers.host}\x1b[0m
+\x1b[32m ⢷⣜⢷⡌⠻⣿⣿⣦⣝⣻⣿⣿⣿⣿⣿⣿⣿⣿     \x1b[34m[████████░░░] 70% Progress\x1b[0m
+\x1b[0m`);
     }
     next();
 });
 
 app.use(express.static(path.join(__dirname)));
 app.get('/', (req, res) => { res.sendFile(path.join(__dirname, 'index.html')); });
-app.listen(PORT, () => console.log(`Server live on ${PORT}`));
+app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
