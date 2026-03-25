@@ -7,14 +7,12 @@
     <style>
         :root { --glow-color: #4af626; }
         body {
-            background-color: #010a01;
-            color: var(--glow-color);
+            background-color: #010a01; color: var(--glow-color);
             font-family: 'Courier New', Courier, monospace;
             padding: 40px; margin: 0; overflow-x: hidden;
             text-shadow: 0 0 5px var(--glow-color), 0 0 10px rgba(74, 246, 38, 0.5);
             animation: flicker 0.15s infinite;
         }
-        /* CRT Scanline Effect */
         body::before {
             content: " "; display: block; position: fixed;
             top: 0; left: 0; bottom: 0; right: 0;
@@ -32,7 +30,7 @@
             font-family: inherit; font-size: inherit; outline: none;
             flex-grow: 1; margin-left: 10px; text-shadow: 0 0 5px var(--glow-color);
         }
-        @keyframes flicker { 0% { opacity: 0.98; } 5% { opacity: 0.95; } 10% { opacity: 0.99; } 100% { opacity: 1; } }
+        @keyframes flicker { 0% { opacity: 0.98; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -48,10 +46,7 @@
         <div class="subheader">DevOps | Software Engineering | Automation</div>
         <div id="welcome-msg" class="output"></div>
         <div id="history"></div>
-        <div class="input-line">
-            <span>root ></span>
-            <input type="text" id="command-input" autofocus autocomplete="off">
-        </div>
+        <div class="input-line"><span>root ></span><input type="text" id="command-input" autofocus autocomplete="off"></div>
     </div>
     <script src="script.js"></script>
 </body>
