@@ -1,39 +1,39 @@
-const input = document.getElementById('command-input');
-const history = document.getElementById('history');
-const welcomeMsg = document.getElementById('welcome-msg');
-
 const commands = {
-    help: "Available: about, projects, education, hobbies, contact, clear",
-    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast. Building a BMO robot.",
-    projects: "Godot 2D Endless Runner, BMO Robot (Arduino/Pi), Terminal CV.",
-    education: "B.Sc. in CSE @ Daffodil International University | HSC @ Govt Rupnagar Model School & College.",
-    hobbies: "Watching Anime, Listening to Music, Watching Movies.",
-    contact: "GitHub: @acidki | Email: sudipto@example.com",
+    help: `Available commands:
+- about: About me
+- skills: My technical skills
+- projects: List of my projects
+- contact: Contact information
+- experience: My work experience
+- education: My educational background
+- languages: Languages I speak
+- clear: Clear the terminal
+- reload: Reload the terminal`,
+
+    about: "Sudipto (Acid) | CS Student at DIU | Linux Enthusiast. Currently building an interactive BMO robot.",
+    
+    skills: "Programming: C, JavaScript, Godot Script. Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi.",
+    
+    projects: "1. Godot 2D Endless Runner (Mobile)\n2. BMO Robot (Interactive Hardware)\n3. Terminal CV (Node.js/Express)",
+    
+    contact: "GitHub: github.com/acidki | Email: [Your Email Here]",
+    
+    experience: "Section 70_G Football Team Organizer | Iftar Party Event Management | Open Source Contributor.",
+    
+    education: `[ UNIVERSITY ]
+University : Daffodil International University (DIU)
+Degree     : Bachelor of Science
+Subject    : Computer Science & Engineering
+
+[ COLLEGE ]
+College    : Govt. Rupnagar Model School & College
+Degree     : HSC
+Subject    : Science`,
+    
+    languages: "English (Professional), Bengali (Native), [Any others?].",
 };
 
-function typewriter(element, text, speed = 40) {
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
-
-let initialized = false;
-const initSite = () => {
-    if (initialized) return;
-    initialized = true;
-    new Audio('boot.mp3').play().catch(() => {});
-    typewriter(welcomeMsg, "System initialized... Type 'help' to begin.");
-};
-
-document.addEventListener('click', initSite, { once: true });
-document.addEventListener('keydown', initSite, { once: true });
-
+// --- Execution Logic ---
 input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const cmd = input.value.toLowerCase().trim();
@@ -43,16 +43,20 @@ input.addEventListener('keydown', (e) => {
 
         if (cmd === 'clear') {
             history.innerHTML = '';
+        } else if (cmd === 'reload') {
+            location.reload();
         } else if (commands[cmd]) {
             const out = document.createElement('div');
             out.className = 'output';
-            out.innerText = commands[cmd];
+            // Use innerHTML and <br> or \n for the education block
+            out.innerText = commands[cmd]; 
             history.appendChild(out);
         } else if (cmd !== "") {
             const err = document.createElement('div');
-            err.innerText = `Command not found: ${cmd}`;
+            err.innerText = `Command not found: ${cmd}. Type 'help' for options.`;
             history.appendChild(err);
         }
+        
         input.value = '';
         window.scrollTo(0, document.body.scrollHeight);
     }
