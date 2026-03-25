@@ -1,39 +1,19 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-
-const PORT = process.env.PORT || 10000;
-
 app.get('/', (req, res, next) => {
     const userAgent = req.headers['user-agent'] || '';
-    
-    if (userAgent.toLowerCase().includes('curl') || userAgent.toLowerCase().includes('wget')) {
+    if (userAgent.toLowerCase().includes('curl')) {
         res.setHeader('Content-Type', 'text/plain; charset=utf-8');
         return res.send(`
-\x1b[32m       
-                ⣀⣀⣀⣀⣀⣀⡀
-            ⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣄
-        ⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀
-       ⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄
-       ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄
-       ⢿⣿⣿⣿⣿⣿⣿⠛⠉⠉⠉⠉⠛⠛⠿⣿⣿⣿⣿⣿
-       ⢸⣿⣿⣿⣿⣿⣿⣶⣤⡄⠀⠀⣤⣶⡶⠞⠻⣿⣿⠃        \x1b[31macid\x1b[0m@\x1b[31mGenesis\x1b[0m
-       ⢰⣿⣿⣿⣿⣿⣯⣟⣿⣿⠀⠀⢾⣿⣥⢼⣆⠀⣿        -----------------------
-       ⢸⣿⣿⣿⣿⣿⣿⣶⣿⣿⠁⠀⠈⠛⠛⠚⠁⠀⠇        \x1b[31mUser\x1b[0m   > Sudipto Chakraborty
-       ⢸⣿⣿⣿⣏⡉⢻⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀          \x1b[31mOS\x1b[0m     > Ubuntu 24.04 (Genesis)
-       ⢿⣿⣿⣿⣿⣾⣿⣿⣿⣖⠈⠃⠀⠀⠀⠀⠀⠀          \x1b[31mUniv\x1b[0m   > Daffodil Intl Univ (CSE)
-          ⠈⣿⣿⣿⣿⣿⣿⣿⣿⠿⢷⣦⠀⠀⠀⠀⠀           \x1b[31mStatus\x1b[0m > Building BMO Robot
-          ⠸⣿⣿⣿⣿⣿⣷⣶⡦⠀⠀⠀⢠⠌⠀⠀⠀           \x1b[31mHobby\x1b[0m  > Anime, Music, Movies
-          ⢠⣿⣿⣿⣿⣿⣄⣀⡀⠀⢀⣴⢏⠀⠀⠀⠀
-       ⣀⣤⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⣧⣀⡀           \x1b[33m[ VISIT WEB VERSION ]\x1b[0m
-  ⣀⣤⣾⣿⣿⣿⣿⣿⣿⡝⢿⣿⣿⣿⡿⠋⠁⢀⠄⢠⣿⣿⣿      \x1b[32mhttps://${req.headers.host}\x1b[0m
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡈⠻⢿⣿⣀⣠⣴⠋⠀⣼⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠈⢻⣿⠋⠁⢀⢀⣿⣿⣿⣿      \x1b[34m[████████░░░] 70% Progress\x1b[0m
-\x1b[0m`);
+Sudipto Chakraborty (Acid)
+DevOps | Software Engineering | Automation
+------------------------------------------
+Available commands:
+- help        - about       - skills
+- projects    - contact     - experience
+- education   - languages   - clear
+- reload
+
+[ Web Version: https://${req.headers.host} ]
+`);
     }
     next();
 });
-
-app.use(express.static(path.join(__dirname)));
-app.get('/', (req, res) => { res.sendFile(path.join(__dirname, 'index.html')); });
-app.listen(PORT, () => console.log(`Server live on ${PORT}`));
