@@ -15,7 +15,7 @@ app.get('/', (req, res, next) => {
 \x1b[32m ⣿⣶⠐⠁⠀⣀⣠⣤⠄⠀⠀⠈⠙⠻⣿⣿      -----------------------
 \x1b[32m ⡛⡩⠖⠀⣴⣿⣿⣿⠀⠀⠀⠀⠸⠇⠀⠙⢿     \x1b[31mUser\x1b[0m   > Sudipto Chakraborty Suvo
 \x1b[32m ⢻⣦⢀⣹⣿⣿⣿⣇⠀⠄⠀⠀⠀⡀⠀⠈⢻     \x1b[31mOS\x1b[0m     > Ubuntu 24.04 LTS
-\x1b[32m ⣼⣄⢫⡌⣿⣿⣿⣿⣿⣦⡈⠲⣄⣤⣤⡡⢀⣠    \x1b[31mUniv\x1b[0m   > Daffodil Intl University 
+\x1b[32m ⣼⣄⢫⡌⣿⣿⣿⣿⣿⣦⡈⠲⣄⣤⣤⡡⢀⣠    \x1b[31mUni\x1b[0m   > Daffodil Intl University 
 \x1b[32m ⣿⣦⠱⢻⣿⣿⣿⣿⣿⣿⣷⣬⣍⣭⣥⣾⣿⣿    \x1b[31mStatus\x1b[0m > Persuing Bachalors in Computer Science
 \x1b[32m ⠻⣿⣷⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿    \x1b[31mHobby\x1b[0m  > Anime, Music, Movies
 \x1b[32m ⠃⣧⡹⣿⣷⡄⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿     
