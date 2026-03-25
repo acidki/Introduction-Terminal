@@ -3,19 +3,30 @@ const history = document.getElementById('history');
 const welcomeMsg = document.getElementById('welcome-msg');
 
 const commands = {
-    help: "Available: about, skills, projects, contact, experience, education, languages, clear, reload",
-    about: "Sudipto (Acid) | CSE Student at DIU | Tech Enthusiast. Currently building an interactive desk bot.",
-    skills: "Programming: C, JavaScript, Godot Script,Python. Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi.",
-    projects: "1. Godot 2D Endless Runner\n2. BMO Robot (Hardware)\n3. Terminal CV (Node.js)",
+    help: "Available: about, skills, projects, contact, experience, education, achievements, hobbies, languages, clear, reload",
+    
+    about: "Sudipto Chakraborty Suvo (Acid) | CSE Student at DIU | Tech Enthusiast. Currently building a deskbot.",
+    
+    skills: "Programming: C, JavaScript, Python, Godot Script. Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi.",
+    
+    projects: "1.2D Endless Runner Game\n2. Desk bot \n3. Terminal CV ",
+    
     achievements: `[🏆 HALL OF FAME ]
-1. 8th Place - DIU Prompt Battle (Daffodil International University)\n
+1. 8th Place - DIU Prompt Battle (Daffodil International University)
 2. Participant - NASA Space Apps Challenge 2024`,
+
+    hobbies: "Watching Anime, Listening to Music, Watching Movies.",
+
     contact: "GitHub: github.com/acidki | Email: sudiptochakrabortysuvo@gmail.com",
+    
     experience: "Section 70_G Football Team Organizer | Iftar Party Event Management.",
+    
     education: "UNIVERSITY: Daffodil International University | Degree: Bachelor of Science | Subject: Computer Science & Engineering\n\nCOLLEGE: Govt. Rupnagar Model School & College | Degree: HSC | Subject: Science",
-    languages: "English (Professional)\nBengali (Native)\nHindi (can Speak)\nJapanese (learning)",
+    
+    languages: "English (Professional)\nBengali (Native)\nHindi (can speak only)\nJapanese (learning).",
 };
 
+// --- Typewriter Function ---
 function typewriter(element, text, speed = 40) {
     let i = 0;
     element.innerHTML = "";
@@ -29,6 +40,7 @@ function typewriter(element, text, speed = 40) {
     type();
 }
 
+// --- Audio & Initialization ---
 let initialized = false;
 const initSite = () => {
     if (initialized) return;
@@ -40,6 +52,7 @@ const initSite = () => {
 document.addEventListener('click', initSite, { once: true });
 document.addEventListener('keydown', initSite, { once: true });
 
+// --- Command Execution ---
 input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const cmd = input.value.toLowerCase().trim();
@@ -58,9 +71,10 @@ input.addEventListener('keydown', (e) => {
             history.appendChild(out);
         } else if (cmd !== "") {
             const err = document.createElement('div');
-            err.innerText = `Command not found: ${cmd}`;
+            err.innerText = `Command not found: ${cmd}. Type 'help' for options.`;
             history.appendChild(err);
         }
+        
         input.value = '';
         window.scrollTo(0, document.body.scrollHeight);
     }
