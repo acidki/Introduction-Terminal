@@ -1,5 +1,5 @@
 # 📟 Genesis Terminal CV
-> **Sudipto Chakraborty Suvo (Acid)** | DevOps | Software Engineering | Automation
+> **Sudipto Chakraborty Suvo (Acid)** | Just a curious guy
 
 A retro-inspired, CRT-style portfolio designed for the modern web but built for the Linux terminal. This project features environment-aware rendering to serve a custom experience based on how you access it.
 
@@ -7,42 +7,28 @@ A retro-inspired, CRT-style portfolio designed for the modern web but built for 
 
 ## 🌟 The Experience
 
+### 🌐 Web Mode (Interactive CRT)
+Experience a 1990s-style computer terminal directly in your browser.
+* **Aesthetics:** Green glow, scanline overlays, and screen flicker animations.
+* **Interactive:** A fully functional command-line interface (CLI).
+* **Immersive:** Authentic mechanical boot-up sounds and typewriter text effects.
+
+**[Preview of Web Interface]**
+![Web Preview](assets/browser-ss.png)
+
+### ⌨️ Terminal Mode (CURL)
+Built for the power user. No browser? No problem.
+* **Neofetch Style:** Get a system-fetch summary directly in your shell.
+* **Custom ASCII:** A high-density portrait sidebar.
+* **Lightweight:** Pure text-based delivery for high-speed access.
+
+**[Preview of Terminal Output]**
+![Terminal Preview](assets/terminal-ss.png)
+
 ### 🎬 Interaction Demo
 *Typewriter effect and command execution.*
 
-<p align="center">
-  <img src="assets/demo.gif" width="100%" alt="Interaction Demo">
-</p>
-
-* **Typewriter Effect:** Smooth, character-by-character text rendering for that classic terminal feel.
-* **Audio Feedback:** Authentic mechanical boot-up sounds triggered upon system initialization.
-* **Interactive CLI:** A fully functional command parser with 10+ unique data points.
-
----
-
-### 🌐 Web Mode (Interactive CRT)
-*Interactive CRT interface with scanlines and flicker effects.*
-
-<p align="center">
-  <img src="assets/browser-ss.png" width="90%" alt="Browser Terminal Preview">
-</p>
-
-* **Retro Aesthetics:** Custom CSS-based CRT scanlines, screen flicker, and a deep green glow.
-* **Responsive Design:** Optimized for both desktop browsers and mobile viewing.
-* **System Commands:** Specialized commands like `reload` and `clear` to manage the UI.
-
----
-
-### ⌨️ Terminal Mode (CURL)
-*Custom ASCII silhouette and system information.*
-
-<p align="center">
-  <img src="assets/terminal-ss.png" width="90%" alt="Terminal CURL Preview">
-</p>
-
-* **Neofetch Style:** Get a system-fetch summary directly in your shell including OS and University specs.
-* **Custom ASCII:** A high-density portrait sidebar rendered using UTF-8 Braille patterns.
-* **Lightweight:** Pure text-based delivery optimized for high-speed terminal access.
+![Interaction Demo](assets/demo.gif)
 
 ---
 
