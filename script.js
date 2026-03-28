@@ -3,7 +3,8 @@ const history = document.getElementById('history');
 const welcomeMsg = document.getElementById('welcome-msg');
 
 const commands = {
-    help: "Available: about, skills, projects, contact, experience, education, achievements, hobbies, languages, clear, reload",
+    // 1. Added 'socials' to the help list
+    help: "Available: about, skills, projects, contact, socials, experience, education, achievements, hobbies, languages, clear, reload",
     
     about: `[ 👤 BIOGRAPHY ]
 Name: Sudipto Chakraborty Suvo (Acid)
@@ -19,6 +20,14 @@ Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi`,
 2. Desk bot
 3. Terminal CV`,
     
+    // 2. The New Socials Command
+    socials: `[ 🌐 SOCIAL NETWORKS ]
+Facebook  : facebook.com/Acidki
+Instagram : instagram.com/acid_in_twilight
+Twitter   : x.com/Acid_ki
+Discord   : acid_here
+Pinterest :pin.it/4ZS1SHRdM`,
+
     achievements: `[🏆 HALL OF FAME ]
 1. 8th Place - DIU Prompt Battle (Daffodil International University)
 2. Participant - NASA Space Apps Challenge 2024`,
@@ -33,15 +42,15 @@ Email: sudiptochakrabortysuvo@gmail.com
 GitHub: github.com/acidki
 LinkedIn: linkedin.com/in/sudipto-chakraborty-suvo`,
     
-   experience: `[ 💼 ACTIVITIES ]
+    experience: `[ 💼 ACTIVITIES ]
 - Section 70_G Football Team Organizer
 - Iftar Party Event Management`,
     
-   education: `[ 🎓 ACADEMICS ]
+    education: `[ 🎓 ACADEMICS ]
 UNIVERSITY: Daffodil International University | Degree: Bachelor of Science | Subject: Computer Science & Engineering
 COLLEGE: Govt. Rupnagar Model School & College | Degree: HSC | Subject: Science`,
     
-    languages: `[ 🌐 LANGUAGES ]
+    languages: `[ 🗣️ LANGUAGES ]
 - English (Professional)
 - Bengali (Native)
 - Hindi (Can speak only)
