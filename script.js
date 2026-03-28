@@ -5,25 +5,47 @@ const welcomeMsg = document.getElementById('welcome-msg');
 const commands = {
     help: "Available: about, skills, projects, contact, experience, education, achievements, hobbies, languages, clear, reload",
     
-    about: "Sudipto Chakraborty Suvo (Acid) | CSE Student at DIU | Tech Enthusiast. Currently building a deskbot.",
+    about: `[ 👤 BIOGRAPHY ]
+Name: Sudipto Chakraborty Suvo (Acid)
+Status: CSE Student at DIU 
+Goal: not sure! .`,
     
-    skills: "Programming: C, JavaScript, Python, Godot Script. Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi.",
+    skills: `[ 🛠️ TECHNICAL STACK ]
+Languages: C, JavaScript, Python, Godot Script
+Tools: Linux (Ubuntu/Arch), Git, Arduino, Raspberry Pi`,
     
-    projects: "1.2D Endless Runner Game\n2. Desk bot \n3. Terminal CV ",
+    projects: `[ 🚀 WORKS ]
+1. 2D Endless Runner Game
+2. Desk bot
+3. Terminal CV`,
     
     achievements: `[🏆 HALL OF FAME ]
 1. 8th Place - DIU Prompt Battle (Daffodil International University)
 2. Participant - NASA Space Apps Challenge 2024`,
 
-    hobbies: "Watching Anime, Listening to Music, Watching Movies.",
+    hobbies: `[ 🎭 INTERESTS ]
+- Watching Anime
+- Listening to Music
+- Watching Movies`,
 
-    contact: "GitHub: github.com/acidki | Email: sudiptochakrabortysuvo@gmail.com",
+   contact: `[ 📧 REACH ME ]
+Email: sudiptochakrabortysuvo@gmail.com
+GitHub: github.com/acidki
+LinkedIn: linkedin.com/in/sudipto-chakraborty-suvo`,
     
-    experience: "Section 70_G Football Team Organizer | Iftar Party Event Management.",
+   experience: `[ 💼 ACTIVITIES ]
+- Section 70_G Football Team Organizer
+- Iftar Party Event Management`,
     
-    education: "UNIVERSITY: Daffodil International University | Degree: Bachelor of Science | Subject: Computer Science & Engineering\n\nCOLLEGE: Govt. Rupnagar Model School & College | Degree: HSC | Subject: Science",
+   education: `[ 🎓 ACADEMICS ]
+UNIVERSITY: Daffodil International University | Degree: Bachelor of Science | Subject: Computer Science & Engineering
+COLLEGE: Govt. Rupnagar Model School & College | Degree: HSC | Subject: Science`,
     
-    languages: "English (Professional)\nBengali (Native)\nHindi (can speak only)\nJapanese (learning).",
+    languages: `[ 🌐 LANGUAGES ]
+- English (Professional)
+- Bengali (Native)
+- Hindi (Can speak only)
+- Japanese (Learning)`
 };
 
 // --- Typewriter Function ---
