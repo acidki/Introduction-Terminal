@@ -26,7 +26,7 @@ Facebook  : facebook.com/Acidki
 Instagram : instagram.com/acid_in_twilight
 Twitter   : x.com/Acid_ki
 Discord   : acid_here
-Pinterest :pin.it/4ZS1SHRdM`,
+Pinterest : pin.it/4ZS1SHRdM`,
 
     achievements: `[🏆 HALL OF FAME ]
 1. 8th Place - DIU Prompt Battle (Daffodil International University)
